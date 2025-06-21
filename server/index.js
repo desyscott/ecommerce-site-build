@@ -83,7 +83,7 @@ app.post("/create-order", async (req, res) => {
     }
 
     const successUrl = `${
-      process.env.SERVER_URL || "http://localhost:5173"
+      process.env.SERVER_URL || "https://ecommerce-site-build.vercel.app"
     }/checkout?ordersuccess=true&orderNumber=${orderNumber}`;
 
     res.json({
