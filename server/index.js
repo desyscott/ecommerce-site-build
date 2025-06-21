@@ -102,7 +102,7 @@ app.post("/create-order", async (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.json("Api running on port localhost 3000");
+  res.json("Api running on port ..🚀");
 });
 
 app.listen(3000, () => {
