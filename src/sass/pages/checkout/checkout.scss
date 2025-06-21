@@ -1,0 +1,178 @@
+@use '../../variables' as *;
+
+.checkout-container {
+  padding: $spacer;
+  background-color: $white-200;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .back-button {
+    color: rgba($dark-200, 0.5);
+    cursor: pointer;
+    user-select: none;
+    font-weight: 500;
+    text-transform: capitalize;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-bottom: $spacer;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $brown-200;
+    }
+  }
+}
+
+.checkout-form {
+  display: grid;
+  gap: $spacer * 2;
+
+  @include screen(768) {
+    grid-template-columns: 1fr 1fr;
+    gap: $spacer * 3;
+  }
+}
+
+.form-section {
+  background-color: $white;
+  padding: $spacer * 1.5;
+  border-radius: 8px;
+
+  @include screen(680) {
+    padding: $spacer * 2;
+  }
+}
+
+.form-title {
+  text-transform: uppercase;
+  font-size: 1.75rem;
+  letter-spacing: 1px;
+  margin-bottom: $spacer * 1.5;
+  color: $dark-200;
+}
+
+.section-title {
+  letter-spacing: 0.8px;
+  font-size: 0.95rem;
+  color: $brown-200;
+  text-transform: uppercase;
+  margin-bottom: $spacer * 1.5;
+  display: block;
+}
+
+.form-group {
+  margin-bottom: $spacer * 2;
+}
+
+.form-grid {
+  display: grid;
+  gap: $spacer * 1.5;
+
+  @include screen(545) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.form-field {
+  margin-bottom: $spacer * 1.5;
+
+  label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: $spacer * 0.5;
+    color: $dark-200;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    padding: 0.75em 1.3em;
+    border: 1px solid #cfcfcf;
+    border-radius: 8px;
+    outline: none;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      border-color: $brown-200;
+      box-shadow: 0 0 0 1px $brown-200;
+    }
+
+    &::placeholder {
+      color: rgba($dark-200, 0.4);
+      font-weight: 500;
+    }
+  }
+}
+
+.error-message {
+  display: block;
+  margin-top: $spacer * 0.5;
+  font-size: 0.75rem;
+  color: rgba(red, 0.8);
+  text-transform: uppercase;
+}
+
+input.invalid {
+  border: 1px solid rgba(red, 0.8) !important;
+
+  &:focus {
+    box-shadow: 0 0 0 1px rgba(red, 0.8);
+  }
+}
+
+.payment-method {
+  margin-top: $spacer * 2;
+
+  label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: $spacer;
+    color: $dark-200;
+  }
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: $spacer;
+
+  @include screen(545) {
+    flex-direction: row;
+  }
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  padding: 0.75em 1.3em;
+  border: 1px solid #cfcfcf;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+
+  input {
+    margin-right: $spacer * 0.7;
+    cursor: pointer;
+    accent-color: $brown-200;
+  }
+
+  &:hover {
+    border-color: $brown-200;
+  }
+
+  &.selected {
+    border: 1px solid $brown-200;
+    background-color: rgba($brown-200, 0.05);
+  }
+}
+
+// Hide footer container if needed
+.checkout-container ~ .footer {
+  & > .container {
+    display: none;
+  }
+}
